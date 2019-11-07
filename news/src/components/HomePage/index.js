@@ -9,8 +9,11 @@ export const HomePage = connect(null, {addNewPost, getNewsPosts})(props => {
 
     const testNews = {
         title: 'Test',
-        description: 'Test test',
-        data: new Date()
+        image: 'https://ktonanovenkogo.ru/image/priroda-gora.jpg',
+        description: 'TEST',
+        data: new Date(),
+        author: 'Author',
+        category: 'Category'
     };
 
     return (

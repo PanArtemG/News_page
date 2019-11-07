@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
 
 export const NewsList = connect(mapStateToProps, {getNewsPosts})(props => {
     const {getNewsPosts, news_posts} = props;
+    // useEffect отрисовывает посты
     useEffect(()=>{
        getNewsPosts()
     },
@@ -22,8 +23,11 @@ export const NewsList = connect(mapStateToProps, {getNewsPosts})(props => {
       return (
           <div>
             <h2 key={item._id} >{item.title}</h2>
+            <img src={item.image} alt=""/>
             <p>{item.description}</p>
-            <span>{item.data}</span>
+            <p>{item.data}</p>
+            <span>{item.author}</span>
+            <span>{item.category}</span>
           </div>
           )
     })
