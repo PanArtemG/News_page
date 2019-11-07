@@ -13,6 +13,13 @@ const newsPostReducer = (state = initialState, action) => {
                 ...state,
                 news_posts: payload
             };
+        case ACTION.SET_NEW_POST:
+            return {
+                news_posts: [
+                    ...state.news_posts,
+                    payload
+                ]
+            };
         default:
             return {...state}
     }

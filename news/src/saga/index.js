@@ -14,6 +14,24 @@ function* getNewsPostsSaga() {
     }
 }
 
+
+
+function* addNewsSaga() {
+    while (true) {
+        const { post } = yield take(ACTION.NEW_POST);
+        const response = yield axios.post('news-blog/new_post', post);
+        if (response.data.created) {
+            yield put({
+                type: ACTION.SET_NEW_POST,
+                payload: response.data.post
+            })
+        }
+    }
+}
+
 export function* rootSaga () {
-    yield all ([getNewsPostsSaga()])
+    yield all ([
+        getNewsPostsSaga(),
+        addNewsSaga()
+    ])
 }
