@@ -2,7 +2,7 @@ const express = require ('express');
 const app = express();
 const newsPosts = require ('./routes');
 
-const port = 9000;
+const port = 3001;
 
 const connectDb = require ('./database');
 

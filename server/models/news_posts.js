@@ -7,5 +7,5 @@ const Post = new Shema ({
     data: Date
 });
 
-module.exports = mongoose.model( 'post', Post, 'posts');
+module.exports = mongoose.model( 'post', Post, 'news');
 

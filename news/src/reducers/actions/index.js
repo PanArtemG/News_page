@@ -10,9 +10,9 @@ export const setNewsPosts = (payload) => ({
     payload
 });
 
-export const addNewPost = (payload) => ({
+export const addNewPost = (post) => ({
    type : ACTION.NEW_POST,
-   payload
+   post
 });
 
 

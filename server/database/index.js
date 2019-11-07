@@ -1,6 +1,6 @@
 const mongoose = require ('mongoose');
 
-const mongodb = 'mongodb+srv://news_admin:news_admin@blog-yqlgn.mongodb.net/test?retryWrites=true&w=majority';
+const mongodb = 'mongodb+srv://news_admin:news_admin@blog-yqlgn.mongodb.net/blog?retryWrites=true&w=majority';
 
 async function connectDb() {
     try {
