@@ -2,6 +2,7 @@ import React from 'react';
 import store, {addNewPost, getNewsPosts} from "../../store";
 import {connect} from "react-redux";
 import {NewsList} from "../";
+import Button from '@material-ui/core/Button';
 
 
 export const HomePage = connect(null, {addNewPost, getNewsPosts})(props => {
@@ -19,7 +20,10 @@ export const HomePage = connect(null, {addNewPost, getNewsPosts})(props => {
     return (
         <div>
             <h1>KY</h1>
-            <button onClick={ () => addNewPost(testNews)}>CREATE NEW NEWS</button>
+            <Button onClick={ () => addNewPost(testNews)} variant="contained" color="primary">
+                CREATE NEW NEWS
+            </Button>
+            {/*<button onClick={ () => addNewPost(testNews)}>CREATE NEW NEWS</button>*/}
             <NewsList/>
         </div>
     )
