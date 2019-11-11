@@ -21,8 +21,8 @@ export const NewsList = connect(mapStateToProps, {getNewsPosts})(props => {
     return (
     news_posts.map(item => {
       return (
-          <div>
-            <h2 key={item._id} >{item.title}</h2>
+          <div key={item._id}>
+            <h2>{item.title}</h2>
             <img src={item.image} alt=""/>
             <p>{item.description}</p>
             <p>{item.data}</p>
