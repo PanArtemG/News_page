@@ -1,4 +1,7 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
+
+import {NewsList, HomePage} from "../../components/index";
 
 import { makeStyles, fade } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -23,8 +26,13 @@ const useStyles = makeStyles(theme => ({
     menuButton: {
         marginRight: theme.spacing(2),
     },
-    title: {
+    wrapLinks: {
         flexGrow: 1,
+    },
+    link: {
+        textDecoration: 'none',
+        color: 'inherit',
+        marginRight: theme.spacing(3),
     },
     search: {
         position: 'absolute',
@@ -89,9 +97,12 @@ export const Header = () => {
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <MoreVertIcon/>
                     </IconButton>
-                    <Typography className={classes.title}>
-                    HEADER
-                    </Typography>
+                        <div className={classes.wrapLinks}>
+                            <NavLink className={classes.link} to='/'> HOME PAGE </NavLink>
+                            <NavLink className={classes.link} to='/create_news'>CREATE NEWS </NavLink>
+                            <NavLink className={classes.link} to='/contact'> CONTACT </NavLink>
+                            <NavLink className={classes.link} to='/about_us'> ABOUT US </NavLink>
+                        </div>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
                             <SearchIcon />

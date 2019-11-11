@@ -9,7 +9,10 @@ import Button from "@material-ui/core/Button";
 const useStyles = makeStyles(theme => ({
     container: {
         display: 'flex',
+        flexDirection: 'column',
         flexWrap: 'wrap',
+        alignItems: 'center',
+        justifyContent: 'center',
         paddingBottom: theme.spacing(3),
     },
     containerInput: {
@@ -53,51 +56,54 @@ export const FormCreatePost = connect(null, {addNewPost} )( props => {
     };
 
     return (
-        <form className={classes.container} noValidate autoComplete="off">
-            <div className={classes.containerInput}>
-                <TextField
-                    className={classes.textField}
-                    label="Title"
-                    margin="normal"
-                    variant="outlined"
-                    onChange={(even) => setTitle(even.target.value)}
-                />
-                <TextField
-                    className={classes.textField}
-                    label="URL image"
-                    defaultValue="https://ktonanovenkogo.ru/image/priroda-gora.jpg"
-                    margin="normal"
-                    variant="outlined"
-                    onChange={(even) => setUrlImg(even.target.value)}
-                />
-                <TextField
-                    className={classes.textField}
-                    label="Tex for your news"
-                    multiline={true}
-                    rows={2}
-                    rowsMax={10}
-                    margin="normal"
-                    variant="outlined"
-                    onChange={(even) => setText(even.target.value)}
-                />
-                <TextField
-                    className={classes.textField}
-                    label="Author"
-                    margin="normal"
-                    variant="outlined"
-                    onChange={(even) => setAuthor(even.target.value)}
-                />
-                <TextField
-                    className={classes.textField}
-                    label="Category"
-                    margin="normal"
-                    variant="outlined"
-                    onChange={(even) => setCategory(even.target.value)}
-                />
-                <Button className={classes.btnAddPost} onClick={ ()=>addNewPost(newPost)} variant="contained" color="inherit">
-                    ADD NEW NEWS
-                </Button>
-            </div>
-        </form>
+        <div className={classes.container}>
+            <h1>Created your post</h1>
+            <form className={classes.container} noValidate autoComplete="off">
+                <div className={classes.containerInput}>
+                    <TextField
+                        className={classes.textField}
+                        label="Title"
+                        margin="normal"
+                        variant="outlined"
+                        onChange={(even) => setTitle(even.target.value)}
+                    />
+                    <TextField
+                        className={classes.textField}
+                        label="URL image"
+                        defaultValue="https://ktonanovenkogo.ru/image/priroda-gora.jpg"
+                        margin="normal"
+                        variant="outlined"
+                        onChange={(even) => setUrlImg(even.target.value)}
+                    />
+                    <TextField
+                        className={classes.textField}
+                        label="Tex for your news"
+                        multiline={true}
+                        rows={2}
+                        rowsMax={10}
+                        margin="normal"
+                        variant="outlined"
+                        onChange={(even) => setText(even.target.value)}
+                    />
+                    <TextField
+                        className={classes.textField}
+                        label="Author"
+                        margin="normal"
+                        variant="outlined"
+                        onChange={(even) => setAuthor(even.target.value)}
+                    />
+                    <TextField
+                        className={classes.textField}
+                        label="Category"
+                        margin="normal"
+                        variant="outlined"
+                        onChange={(even) => setCategory(even.target.value)}
+                    />
+                    <Button className={classes.btnAddPost} onClick={ ()=>addNewPost(newPost)} variant="contained" color="inherit">
+                        ADD NEW NEWS
+                    </Button>
+                </div>
+            </form>
+        </div>
     );
 })
