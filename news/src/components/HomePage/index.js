@@ -15,35 +15,27 @@ const useStyles = makeStyles(theme => ({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: theme.spacing(7),
     },
-    btnAddPost: {
-        marginBottom: theme.spacing(1),
+    wrapPosts: {
+        width: 1200,
+        display: 'flex',
+        // alignItems: 'center',
+        justifyContent: 'space-around',
+
     }
 
 }));
 
 export const HomePage = connect(null, {addNewPost, getNewsPosts})(props => {
-    const { addNewPost, getNewsPosts } = props;
+    const { getNewsPosts } = props;
     const classes = useStyles();
-
-    const testNews = {
-        title: 'Test',
-        image: 'https://ktonanovenkogo.ru/image/priroda-gora.jpg',
-        description: 'TEST',
-        data: new Date(),
-        author: 'Author',
-        category: 'Category'
-    };
 
     return (
         <div className={classes.container}>
             <h1>KY</h1>
-            <FormCreatePost className={classes.form} />
-            <Button onClick={ () => addNewPost(testNews)} variant="contained" color="primary">
-                TEST
-            </Button>
-            <NewsList/>
+            <div className={classes.wrapPosts}>
+                <NewsList/>
+            </div>
         </div>
     )
 });
