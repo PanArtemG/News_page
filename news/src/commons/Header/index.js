@@ -1,12 +1,9 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
-import {NewsList, HomePage} from "../../components/index";
-
 import { makeStyles, fade } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import IconButton from '@material-ui/core/IconButton';
 import InputBase from '@material-ui/core/InputBase';
@@ -20,11 +17,16 @@ const useStyles = makeStyles(theme => ({
         flexGrow: 1,
     },
     header: {
-        paddingRight: theme.spacing(7),
         background: 'linear-gradient(45deg, #252525 30%, #FFF 300%)',
+        [theme.breakpoints.down('sm')]: {
+            marginRight: theme.spacing(7),
+        },
     },
     menuButton: {
-        marginRight: theme.spacing(2),
+        [theme.breakpoints.up('sm')]: {
+            display: 'none',
+            marginRight: theme.spacing(2),
+        },
     },
     wrapLinks: {
         flexGrow: 1,
@@ -36,7 +38,7 @@ const useStyles = makeStyles(theme => ({
     },
     search: {
         position: 'absolute',
-        right: -16,
+        right: 16,
         [theme.breakpoints.down('xs')]: {
             display: 'none',
         },
@@ -51,7 +53,6 @@ const useStyles = makeStyles(theme => ({
             marginLeft: theme.spacing(1),
             width: 'auto',
         },
-
     },
     searchIcon: {
         width: theme.spacing(7),

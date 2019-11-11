@@ -18,9 +18,12 @@ const useStyles = makeStyles(theme => ({
     },
     wrapPosts: {
         width: 1200,
-        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        // display: 'flex',
         // alignItems: 'center',
-        justifyContent: 'space-around',
+        // justifyContent: 'space-around',
 
     }
 
@@ -32,7 +35,7 @@ export const HomePage = connect(null, {addNewPost, getNewsPosts})(props => {
 
     return (
         <div className={classes.container}>
-            <h1>KY</h1>
+            <h1>COLECTION</h1>
             <div className={classes.wrapPosts}>
                 <NewsList/>
             </div>
